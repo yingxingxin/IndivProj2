@@ -104,21 +104,26 @@ fun RegisterScreen(navController: NavController) {
     val email by remember { mutableStateOf("") }
     val password by remember { mutableStateOf("") }
 
-    TextField(
-        value = firstName.value,
-        onValueChange = { firstName.value = it },
-        label = { Text(text = "First Name") },
-        modifier = Modifier.fillMaxWidth()
+Column(
+        modifier = Modifier.padding(20.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        TextField(
+            value = firstName.value,
+            onValueChange = { firstName.value = it },
+            label = { Text(text = "First Name") },
+            modifier = Modifier.fillMaxWidth()
         )
 
-    Spacer(modifier = Modifier.height(20.dp))
-    TextField(
-        value = lastName.value,
-        onValueChange = { lastName.value = it },
-        label = { Text(text = "Last Name") },
-        modifier = Modifier.fillMaxWidth()
-    )
-
+        Spacer(modifier = Modifier.height(20.dp))
+        TextField(
+            value = lastName.value,
+            onValueChange = { lastName.value = it },
+            label = { Text(text = "Last Name") },
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
 }
 
 @Composable
